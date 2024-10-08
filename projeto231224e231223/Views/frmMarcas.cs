@@ -84,7 +84,7 @@ namespace projeto231224e231223.Views
         {
             if (txtId.Text == "") return;
 
-            if (MessageBox.Show("Deseja excluir a cidade?", "Exclusão",
+            if (MessageBox.Show("Deseja excluir a Marca?", "Exclusão",
                 MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
             {
                 m = new Marca()
