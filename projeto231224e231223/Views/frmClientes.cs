@@ -1,4 +1,5 @@
-﻿using System;
+﻿using projeto231224e231223.Models;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -7,24 +8,31 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using projeto231224e231223.Models;
 
 namespace projeto231224e231223.Views
 {
-    public partial class frmCidades : Form
+    public partial class frmClientes : Form
     {
-        Cidade c;
-        
-        public frmCidades()
+        Cidade ci;
+        Cliente cl;
+        public frmClientes()
         {
             InitializeComponent();
-        }
+        }   
+
+     
         void limpaControles()
         {
             txtId.Clear();
             txtNome.Clear();
+            cboCidades.SelectedIndex = -1;
             txtUf.Clear();
+            mskCPF.Clear();
+            txtRenda.Clear();
+            dtpDataDeNascimento.Value = DateTime.Now;
+            picFoto.ImageLocation = "";
             txtPesquisar.Clear();
+            chkVenda.Checked = false;
         }
         void carregarGrid(string pesquisa)
         {
@@ -37,10 +45,18 @@ namespace projeto231224e231223.Views
         }
 
 
-        private void frmCidades_Load(object sender, EventArgs e)
+        private void frmClientes_Load(object sender, EventArgs e)
         {
+            ci = new Cidade();
+            cboCidades.DataSource = ci.Consultar();
+            cboCidades.DisplayMember = "nome";
+            cboCidades.ValueMember = "id";
+
             limpaControles();
             carregarGrid("");
+
+            dgvClientes.Columns["idCidade"].Visible = false;
+            dgvClientes.Columns["foto"].Visible=false;
         }
 
         private void btnIncluir_Click(object sender, EventArgs e)
@@ -60,7 +76,7 @@ namespace projeto231224e231223.Views
 
         private void dgvCidades_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            if(dgvCidades.RowCount>0)
+            if (dgvCidades.RowCount > 0)
             {
                 txtId.Text = dgvCidades.CurrentRow.Cells["id"].Value.ToString();
                 txtNome.Text = dgvCidades.CurrentRow.Cells["nome"].Value.ToString();
@@ -89,7 +105,7 @@ namespace projeto231224e231223.Views
             if (txtId.Text == "") return;
 
             if (MessageBox.Show("Deseja excluir a cidade?", "Exclusão",
-                MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes) 
+                MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
             {
                 c = new Cidade()
                 {
@@ -116,6 +132,15 @@ namespace projeto231224e231223.Views
         private void btnFechar_Click(object sender, EventArgs e)
         {
             Close();
+        }
+
+        private void cboCidades_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (cboCidades.SelectedIndex != -1) 
+            { 
+                DataRowView reg = (DataRowView)cboCidades.SelectedItem;
+                txtUf.Text = reg["uf"].ToString();
+            }
         }
     }
 }

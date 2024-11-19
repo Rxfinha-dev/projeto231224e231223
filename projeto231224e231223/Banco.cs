@@ -2,6 +2,7 @@
 using System;
 using System.Collections.Generic;
 using System.Data;
+using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -61,6 +62,17 @@ namespace projeto231224e231223
                 Comando = new MySqlCommand("create database if not exists categorias" + 
                                             "(id integer auto_increment primary key, " +
                                              "categoria char(20))", Conexao);
+                Comando.ExecuteNonQuery();
+                Comando = new MySqlCommand("create database if not exists clientes" +
+                                            "(Id INTEGER AUTO_INCREMENT PRIMARY KEY," +
+                                            "nome CHAR(40), " +
+                                            "idCidade INTEGER, " +
+                                            "dataNasc DATE, " +
+                                            "renda DECIMAL(10,2), " +
+                                            "cpf CHAR(14), " +
+                                            "foto VARCHAR(100), " +
+                                            "venda BOOLEAN)" 
+                                            , Conexao);
                 Comando.ExecuteNonQuery();
                 FecharConexao();
 
