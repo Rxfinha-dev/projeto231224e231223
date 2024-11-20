@@ -52,7 +52,6 @@
             // label9
             // 
             this.label9.AutoSize = true;
-            this.label9.Enabled = false;
             this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
             this.label9.Location = new System.Drawing.Point(264, 375);
             this.label9.Name = "label9";
@@ -74,7 +73,6 @@
             // label11
             // 
             this.label11.AutoSize = true;
-            this.label11.Enabled = false;
             this.label11.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
             this.label11.Location = new System.Drawing.Point(264, 169);
             this.label11.Name = "label11";
@@ -85,7 +83,6 @@
             // label12
             // 
             this.label12.AutoSize = true;
-            this.label12.Enabled = false;
             this.label12.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
             this.label12.Location = new System.Drawing.Point(262, 86);
             this.label12.Name = "label12";
@@ -96,7 +93,6 @@
             // dgvCidades
             // 
             this.dgvCidades.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvCidades.Enabled = false;
             this.dgvCidades.Location = new System.Drawing.Point(267, 457);
             this.dgvCidades.Name = "dgvCidades";
             this.dgvCidades.Size = new System.Drawing.Size(762, 225);
@@ -114,7 +110,6 @@
             // 
             // txtPesquisar
             // 
-            this.txtPesquisar.Enabled = false;
             this.txtPesquisar.Location = new System.Drawing.Point(265, 395);
             this.txtPesquisar.Name = "txtPesquisar";
             this.txtPesquisar.Size = new System.Drawing.Size(695, 20);
@@ -122,7 +117,6 @@
             // 
             // btnFechar
             // 
-            this.btnFechar.Enabled = false;
             this.btnFechar.Location = new System.Drawing.Point(887, 250);
             this.btnFechar.Name = "btnFechar";
             this.btnFechar.Size = new System.Drawing.Size(143, 69);
@@ -132,7 +126,6 @@
             // 
             // btnExcluir
             // 
-            this.btnExcluir.Enabled = false;
             this.btnExcluir.Location = new System.Drawing.Point(733, 250);
             this.btnExcluir.Name = "btnExcluir";
             this.btnExcluir.Size = new System.Drawing.Size(143, 69);
@@ -142,7 +135,6 @@
             // 
             // btnCancelar
             // 
-            this.btnCancelar.Enabled = false;
             this.btnCancelar.Location = new System.Drawing.Point(580, 250);
             this.btnCancelar.Name = "btnCancelar";
             this.btnCancelar.Size = new System.Drawing.Size(143, 69);
@@ -152,7 +144,6 @@
             // 
             // btnAlterar
             // 
-            this.btnAlterar.Enabled = false;
             this.btnAlterar.Location = new System.Drawing.Point(424, 250);
             this.btnAlterar.Name = "btnAlterar";
             this.btnAlterar.Size = new System.Drawing.Size(143, 69);
@@ -162,7 +153,6 @@
             // 
             // btnIncluir
             // 
-            this.btnIncluir.Enabled = false;
             this.btnIncluir.Location = new System.Drawing.Point(265, 250);
             this.btnIncluir.Name = "btnIncluir";
             this.btnIncluir.Size = new System.Drawing.Size(143, 69);
@@ -181,7 +171,6 @@
             // 
             // txtNome
             // 
-            this.txtNome.Enabled = false;
             this.txtNome.Location = new System.Drawing.Point(265, 189);
             this.txtNome.Name = "txtNome";
             this.txtNome.Size = new System.Drawing.Size(639, 20);

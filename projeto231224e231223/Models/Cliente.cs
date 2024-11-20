@@ -1,9 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Data.SqlClient;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using MySql.Data.MySqlClient;
+using System;
+using System.Data;
 using System.Windows.Forms;
 
 namespace projeto231224e231223.Models
@@ -13,6 +10,8 @@ namespace projeto231224e231223.Models
         public int id { get; set; }
         public string nome { get; set; }
         public int idCidade { get; set; }
+
+        public string uf {get; set;}
         public DateTime dataNasc {  get; set; }
         public double renda { get; set; }
         public string cpf { get; set; }

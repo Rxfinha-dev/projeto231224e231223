@@ -36,12 +36,12 @@ namespace projeto231224e231223.Views
         }
         void carregarGrid(string pesquisa)
         {
-            c = new Cidade()
+            cl = new Cliente()
             {
                 nome = pesquisa
             };
 
-            dgvCidades.DataSource = c.Consultar();
+            dgvClientes.DataSource = cl.consultar();
         }
 
 
@@ -63,24 +63,35 @@ namespace projeto231224e231223.Views
         {
             if (txtNome.Text == string.Empty) return;
 
-            c = new Cidade()
+            cl = new Cliente()
             {
                 nome = txtNome.Text,
-                uf = txtUf.Text
+                idCidade = (int)cboCidades.SelectedValue,
+                dataNasc = dtpDataDeNascimento.Value,
+                renda = double.Parse(txtRenda.Text),
+                cpf = mskCPF.Text,
+                foto = picFoto.ImageLocation,
+                venda = chkVenda.Checked
             };
-            c.Incluir();
+            cl.Incluir();
 
             limpaControles();
             carregarGrid("");
         }
 
-        private void dgvCidades_CellClick(object sender, DataGridViewCellEventArgs e)
+        private void dgvClientes_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            if (dgvCidades.RowCount > 0)
+            if (dgvClientes.RowCount > 0)
             {
-                txtId.Text = dgvCidades.CurrentRow.Cells["id"].Value.ToString();
-                txtNome.Text = dgvCidades.CurrentRow.Cells["nome"].Value.ToString();
-                txtUf.Text = dgvCidades.CurrentRow.Cells["uf"].Value.ToString();
+                txtId.Text = dgvClientes.CurrentRow.Cells["id"].Value.ToString();
+                txtNome.Text = dgvClientes.CurrentRow.Cells["nome"].Value.ToString();
+                cboCidades.Text = dgvClientes.CurrentRow.Cells["cidade"].Value.ToString();
+                txtUf.Text = dgvClientes.CurrentRow.Cells["uf"].Value.ToString();
+                chkVenda.Checked = (bool)dgvClientes.CurrentRow.Cells["venda"].Value;
+                mskCPF.Text = dgvClientes.CurrentRow.Cells["cpf"].Value.ToString();
+                dtpDataDeNascimento.Text = dgvClientes.CurrentRow.Cells["dataNasc"].Value.ToString();
+                txtRenda.Text = dgvClientes.CurrentRow.Cells["renda"].Value.ToString();
+                picFoto.ImageLocation = dgvClientes.CurrentRow.Cells["foto"].Value.ToString();
             }
         }
 
@@ -88,13 +99,17 @@ namespace projeto231224e231223.Views
         {
             if (txtId.Text == string.Empty) return;
 
-            c = new Cidade()
+            cl = new Cliente()
             {
                 id = int.Parse(txtId.Text),
                 nome = txtNome.Text,
-                uf = txtUf.Text
+                idCidade = (int)cboCidades.SelectedValue,
+                dataNasc = dtpDataDeNascimento.Value,
+                renda = double.Parse(txtRenda.Text),
+                cpf = mskCPF.Text,
+                venda = chkVenda.Checked
             };
-            c.Alterar();
+            cl.alterar();
 
             limpaControles();
             carregarGrid("");
@@ -104,14 +119,14 @@ namespace projeto231224e231223.Views
         {
             if (txtId.Text == "") return;
 
-            if (MessageBox.Show("Deseja excluir a cidade?", "Exclusão",
+            if (MessageBox.Show("Deseja excluir o Cliente?", "Exclusão",
                 MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
             {
-                c = new Cidade()
+                cl = new Cliente()
                 {
                     id = int.Parse(txtId.Text)
                 };
-                c.Excluir();
+                cl.excluir();
                 limpaControles();
                 carregarGrid("");
             }
@@ -141,6 +156,14 @@ namespace projeto231224e231223.Views
                 DataRowView reg = (DataRowView)cboCidades.SelectedItem;
                 txtUf.Text = reg["uf"].ToString();
             }
+        }
+
+        private void picFoto_Click(object sender, EventArgs e)
+        {
+            openFileDialog1.InitialDirectory = "D:/fotos/clientes/";
+            openFileDialog1.FileName = "";
+            openFileDialog1.ShowDialog();
+            picFoto.ImageLocation = openFileDialog1.FileName;
         }
     }
 }
