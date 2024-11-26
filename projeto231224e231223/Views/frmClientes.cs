@@ -19,7 +19,7 @@ namespace projeto231224e231223.Views
         {
             InitializeComponent();
         }
-        
+
         void LimpaControles()
         {
             txtId.Clear();
@@ -33,7 +33,7 @@ namespace projeto231224e231223.Views
             txtUf.Clear();
             chkVenda.Checked = false;
         }
-        
+
         void carregarGrid(string pesquisa)
         {
             cl = new Cliente()
@@ -42,7 +42,7 @@ namespace projeto231224e231223.Views
             };
             dgvClientes.DataSource = cl.consultar();
         }
-   
+
 
         private void btnIncluir_Click(object sender, EventArgs e)
         {
@@ -62,7 +62,7 @@ namespace projeto231224e231223.Views
 
         private void cboCidades_SelectedIndexChanged(object sender, EventArgs e)
         {
-            if (cboCidades.SelectedIndex != -1) 
+            if (cboCidades.SelectedIndex != -1)
             {
                 DataRowView reg = (DataRowView)cboCidades.SelectedItem;
                 txtUf.Text = reg["uf"].ToString();
