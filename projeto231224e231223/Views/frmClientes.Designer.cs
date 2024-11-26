@@ -61,7 +61,6 @@
             // txtRenda
             // 
             this.txtRenda.AccessibleName = "";
-            this.txtRenda.Enabled = false;
             this.txtRenda.Location = new System.Drawing.Point(944, 255);
             this.txtRenda.Name = "txtRenda";
             this.txtRenda.Size = new System.Drawing.Size(177, 20);
@@ -125,7 +124,6 @@
             // 
             // cboCidades
             // 
-            this.cboCidades.Enabled = false;
             this.cboCidades.FormattingEnabled = true;
             this.cboCidades.Location = new System.Drawing.Point(361, 169);
             this.cboCidades.Name = "cboCidades";
@@ -252,6 +250,7 @@
             this.btnIncluir.Text = "Incluir";
             this.btnIncluir.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             this.btnIncluir.UseVisualStyleBackColor = true;
+            this.btnIncluir.Click += new System.EventHandler(this.btnIncluir_Click);
             // 
             // txtUf
             // 
@@ -322,6 +321,7 @@
             this.Controls.Add(this.txtId);
             this.Name = "frmClientes";
             this.Text = "frmClientes";
+            this.Load += new System.EventHandler(this.frmClientes_Load);
             ((System.ComponentModel.ISupportInitialize)(this.picFoto)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvClientes)).EndInit();
             this.ResumeLayout(false);

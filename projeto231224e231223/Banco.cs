@@ -59,21 +59,37 @@ namespace projeto231224e231223
                                             "marca char(40))" 
                                             , Conexao);
                 Comando.ExecuteNonQuery();
-                Comando = new MySqlCommand("create database if not exists categorias" + 
-                                            "(id integer auto_increment primary key, " +
-                                             "categoria char(20))", Conexao);
+                Comando = new MySqlCommand("create table if not exists pr" +
+                                          "(id integer auto_increment primary key, " +
+                                          "categoria char(20))"
+                                          , Conexao);
                 Comando.ExecuteNonQuery();
-                Comando = new MySqlCommand("create database if not exists clientes" +
-                                            "(Id INTEGER AUTO_INCREMENT PRIMARY KEY," +
-                                            "nome CHAR(40), " +
-                                            "idCidade INTEGER, " +
-                                            "dataNasc DATE, " +
-                                            "renda DECIMAL(10,2), " +
-                                            "cpf CHAR(14), " +
-                                            "foto VARCHAR(100), " +
-                                            "venda BOOLEAN)" 
-                                            , Conexao);
+
+                Comando = new MySqlCommand("create table if not exists clientes" +
+                  "(id integer auto_increment primary key, " +
+                  "nome char(40), " +
+                  "idCidade integer, " +
+                  "dataNasc date, " +
+                  "renda decimal(10,2)," +
+                  "cpf char(14)," +
+                  "foto varchar(100)," +
+                  "venda boolean)", Conexao);
+
                 Comando.ExecuteNonQuery();
+
+                Comando = new MySqlCommand("create table if not exists produtos" +
+                "(id integer auto_increment primary key, " +
+                "descricao char(40), " +
+                "idCategoria integer, " +
+                "idMarca integer, " +
+                "estoque decimal(10,3)," +
+                "valorVenda decimal(10,2)," +
+                "foto varchar(100))", Conexao);
+
+                Comando.ExecuteNonQuery();
+
+
+
                 FecharConexao();
 
             }

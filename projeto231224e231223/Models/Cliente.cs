@@ -10,7 +10,6 @@ namespace projeto231224e231223.Models
         public int id { get; set; }
         public string nome { get; set; }
         public int idCidade { get; set; }
-
         public string uf {get; set;}
         public DateTime dataNasc {  get; set; }
         public double renda { get; set; }
@@ -19,7 +18,7 @@ namespace projeto231224e231223.Models
 
         public bool venda { get; set; }
 
-        public void Incluir()
+        public void incluir()
         {
             try
             {
@@ -100,8 +99,8 @@ namespace projeto231224e231223.Models
             {
                 Banco.Comando = new MySqlCommand
                 (
-                    "select cl*, ci.nome cidade, ci.uf from clientes cl inner join Cidades ci on " +
-                    "(ci.id = cl.idCidade) where cl.nome like ?Nome order by cl.nome", Banco.Conexao
+                    "select cl*, ci.nome cidade, ci.uf from clientes cl inner join cidades ci on " +
+                    "(ci.id = cl.idCidade) where cl.nome like @Nome order by cl.nome", Banco.Conexao
                 );
                 Banco.Comando.Parameters.AddWithValue("@Nome", nome);
                 Banco.Adaptador = new MySqlDataAdapter(Banco.Comando);
