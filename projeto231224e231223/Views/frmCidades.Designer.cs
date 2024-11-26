@@ -97,6 +97,7 @@
             this.dgvCidades.Name = "dgvCidades";
             this.dgvCidades.Size = new System.Drawing.Size(762, 225);
             this.dgvCidades.TabIndex = 55;
+            this.dgvCidades.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvCidades_CellClick);
             // 
             // button1
             // 
@@ -123,6 +124,7 @@
             this.btnFechar.TabIndex = 52;
             this.btnFechar.Text = "Fechar";
             this.btnFechar.UseVisualStyleBackColor = true;
+            this.btnFechar.Click += new System.EventHandler(this.btnFechar_Click);
             // 
             // btnExcluir
             // 
@@ -132,6 +134,7 @@
             this.btnExcluir.TabIndex = 51;
             this.btnExcluir.Text = "Excluir";
             this.btnExcluir.UseVisualStyleBackColor = true;
+            this.btnExcluir.Click += new System.EventHandler(this.btnExcluir_Click);
             // 
             // btnCancelar
             // 
@@ -141,6 +144,7 @@
             this.btnCancelar.TabIndex = 50;
             this.btnCancelar.Text = "Cancelar";
             this.btnCancelar.UseVisualStyleBackColor = true;
+            this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click);
             // 
             // btnAlterar
             // 
@@ -150,6 +154,7 @@
             this.btnAlterar.TabIndex = 49;
             this.btnAlterar.Text = "Alterar";
             this.btnAlterar.UseVisualStyleBackColor = true;
+            this.btnAlterar.Click += new System.EventHandler(this.btnAlterar_Click);
             // 
             // btnIncluir
             // 
@@ -160,6 +165,7 @@
             this.btnIncluir.Text = "Incluir";
             this.btnIncluir.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             this.btnIncluir.UseVisualStyleBackColor = true;
+            this.btnIncluir.Click += new System.EventHandler(this.btnIncluir_Click);
             // 
             // textBox2
             // 
@@ -193,6 +199,7 @@
             this.btnPesquisar.TabIndex = 60;
             this.btnPesquisar.Text = "Pesquisar";
             this.btnPesquisar.UseVisualStyleBackColor = true;
+            this.btnPesquisar.Click += new System.EventHandler(this.btnPesquisar_Click);
             // 
             // label3
             // 

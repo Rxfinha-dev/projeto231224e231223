@@ -188,6 +188,7 @@
             this.dgvClientes.Name = "dgvClientes";
             this.dgvClientes.Size = new System.Drawing.Size(762, 225);
             this.dgvClientes.TabIndex = 50;
+            this.dgvClientes.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvClientes_CellClick_1);
             // 
             // btnPesquisar
             // 
@@ -197,6 +198,7 @@
             this.btnPesquisar.TabIndex = 49;
             this.btnPesquisar.Text = "Pesquisar";
             this.btnPesquisar.UseVisualStyleBackColor = true;
+            this.btnPesquisar.Click += new System.EventHandler(this.btnPesquisar_Click);
             // 
             // txtPesquisar
             // 
@@ -213,6 +215,7 @@
             this.btnFechar.TabIndex = 47;
             this.btnFechar.Text = "Fechar";
             this.btnFechar.UseVisualStyleBackColor = true;
+            this.btnFechar.Click += new System.EventHandler(this.btnFechar_Click_1);
             // 
             // btnExcluir
             // 
@@ -222,6 +225,7 @@
             this.btnExcluir.TabIndex = 46;
             this.btnExcluir.Text = "Excluir";
             this.btnExcluir.UseVisualStyleBackColor = true;
+            this.btnExcluir.Click += new System.EventHandler(this.btnExcluir_Click_1);
             // 
             // btnCancelar
             // 
@@ -231,6 +235,7 @@
             this.btnCancelar.TabIndex = 45;
             this.btnCancelar.Text = "Cancelar";
             this.btnCancelar.UseVisualStyleBackColor = true;
+            this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click_1);
             // 
             // btnAlterar
             // 
@@ -240,6 +245,7 @@
             this.btnAlterar.TabIndex = 44;
             this.btnAlterar.Text = "Alterar";
             this.btnAlterar.UseVisualStyleBackColor = true;
+            this.btnAlterar.Click += new System.EventHandler(this.btnAlterar_Click_1);
             // 
             // btnIncluir
             // 
@@ -250,12 +256,13 @@
             this.btnIncluir.Text = "Incluir";
             this.btnIncluir.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             this.btnIncluir.UseVisualStyleBackColor = true;
-            this.btnIncluir.Click += new System.EventHandler(this.btnIncluir_Click);
+            this.btnIncluir.Click += new System.EventHandler(this.btnIncluir_Click_1);
             // 
             // txtUf
             // 
             this.txtUf.Location = new System.Drawing.Point(827, 169);
             this.txtUf.Name = "txtUf";
+            this.txtUf.ReadOnly = true;
             this.txtUf.Size = new System.Drawing.Size(100, 20);
             this.txtUf.TabIndex = 42;
             // 

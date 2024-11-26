@@ -45,12 +45,11 @@ namespace projeto231224e231223.Views
 
         private void btnIncluir_Click(object sender, EventArgs e)
         {
-            if (txtNome.Text == string.Empty) return;
-
+            if (txtNome.Text == String.Empty) return;
             c = new Cidade()
             {
                 nome = txtNome.Text,
-                uf = txtUf.Text
+                uf = txtUf.Text,
             };
             c.Incluir();
 
@@ -60,7 +59,7 @@ namespace projeto231224e231223.Views
 
         private void dgvCidades_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            if(dgvCidades.RowCount>0)
+            if (dgvCidades.RowCount > 0) 
             {
                 txtId.Text = dgvCidades.CurrentRow.Cells["id"].Value.ToString();
                 txtNome.Text = dgvCidades.CurrentRow.Cells["nome"].Value.ToString();
@@ -70,13 +69,13 @@ namespace projeto231224e231223.Views
 
         private void btnAlterar_Click(object sender, EventArgs e)
         {
-            if (txtId.Text == string.Empty) return;
-
+            if(txtId.Text == String.Empty) return;
+            
             c = new Cidade()
             {
                 id = int.Parse(txtId.Text),
                 nome = txtNome.Text,
-                uf = txtUf.Text
+                uf = txtUf.Text 
             };
             c.Alterar();
 
@@ -86,16 +85,16 @@ namespace projeto231224e231223.Views
 
         private void btnExcluir_Click(object sender, EventArgs e)
         {
-            if (txtId.Text == "") return;
+            if ( txtId.Text == String.Empty) return;
 
-            if (MessageBox.Show("Deseja excluir a cidade?", "Exclusão",
-                MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes) 
+            if(MessageBox.Show("Deseja Excluir a Cidade?", "Exclusão", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
             {
                 c = new Cidade()
                 {
                     id = int.Parse(txtId.Text)
                 };
                 c.Excluir();
+
                 limpaControles();
                 carregarGrid("");
             }
@@ -105,7 +104,6 @@ namespace projeto231224e231223.Views
         {
             limpaControles();
             carregarGrid("");
-
         }
 
         private void btnPesquisar_Click(object sender, EventArgs e)
@@ -116,6 +114,7 @@ namespace projeto231224e231223.Views
         private void btnFechar_Click(object sender, EventArgs e)
         {
             Close();
+
         }
     }
 }

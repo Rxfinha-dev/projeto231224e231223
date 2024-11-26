@@ -59,7 +59,7 @@ namespace projeto231224e231223
                                             "marca char(40))" 
                                             , Conexao);
                 Comando.ExecuteNonQuery();
-                Comando = new MySqlCommand("create table if not exists pr" +
+                Comando = new MySqlCommand("create table if not exists categorias" +
                                           "(id integer auto_increment primary key, " +
                                           "categoria char(20))"
                                           , Conexao);
