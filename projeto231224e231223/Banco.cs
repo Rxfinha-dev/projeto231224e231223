@@ -88,6 +88,21 @@ namespace projeto231224e231223
 
                 Comando.ExecuteNonQuery();
 
+                Comando = new MySqlCommand("create table if not exists vendaCab" +
+                    "(id integer auto_increment primary key," +
+                    "idCliente int," +
+                    "data date," +
+                    "total decimal(10,2))",Conexao);
+                Comando.ExecuteNonQuery();
+
+                Comando = new MySqlCommand("create table if not exists vendaDet" +
+                    "(id integer auto_increment primary key," +
+                    "idVendaCab," +
+                    "idProduto int," +
+                    "qtde decimal(10,3)," +
+                    "valorUnitario decimal(10,2))", Conexao);
+                Comando.ExecuteNonQuery();
+
 
 
                 FecharConexao();
