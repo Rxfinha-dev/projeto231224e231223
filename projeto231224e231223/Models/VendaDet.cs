@@ -1,8 +1,6 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using MySql.Data.MySqlClient;
+using System.Data;
 using System.Windows.Forms;
 
 namespace projeto231224e231223.Models
@@ -30,7 +28,7 @@ namespace projeto231224e231223.Models
                 Banco.Comando.Parameters.AddWithValue("@qtde", qtde);
                 Banco.Comando.Parameters.AddWithValue("@valorUnitario", valorUnitario);
                 Banco.Comando.ExecuteNonQuery();
-                Banco.Comando.Close();
+                Banco.Conexao.Close();
             }catch(Exception e)
             {
                 MessageBox.Show(e.Message, "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);

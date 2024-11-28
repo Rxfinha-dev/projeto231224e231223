@@ -52,5 +52,11 @@ namespace projeto231224e231223
             frmProdutos form = new frmProdutos();
             form.Show();
         }
+
+        private void vendaToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmVenda form = new frmVenda();
+            form.Show();
+        }
     }
 }

@@ -1,19 +1,17 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using MySql.Data.MySqlClient;
+using System.Data;
 using System.Windows.Forms;
 
 namespace projeto231224e231223.Models
 {
     public class VendaCab
     {
-        public int id { get; set; }
+        public int Id { get; set; }
         public int idCliente { get; set; }
 
-        public DateTime data { get; set; }
-        public double total { get; set; }
+        public DateTime Data { get; set; }
+        public double Total { get; set; }
 
 
         public int Incluir()
@@ -26,20 +24,21 @@ namespace projeto231224e231223.Models
                     "insert into vendaCab(idCliente, data, total) " +
                     "values (@idCliente, @data, @total)", Banco.Conexao
                 );
-                Banco.Comando.Parameter.AddWithValue("@idCliente", idCliente);
-                Banco.Comando.Parameter.AddWithValue("@data", data);
-                Banco.Comando.Parameter.AddWithValue("@total", total);
+                Banco.Comando.Parameters.AddWithValue("@idCliente", idCliente);
+                Banco.Comando.Parameters.AddWithValue("@data", Data);
+                Banco.Comando.Parameters.AddWithValue("@total", Total);
                 Banco.Comando.ExecuteNonQuery();
                 Banco.Conexao.Close();
                 return (int)Banco.Comando.LastInsertedId;
 
 
             }
-            catch (Exception e) 
+            catch (Exception e)
             {
-                MessageBox.Show(e.Message, "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error );
+                MessageBox.Show(e.Message, "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return 0;
             }
 
+        }
     }
 }

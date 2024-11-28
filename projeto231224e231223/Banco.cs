@@ -97,7 +97,7 @@ namespace projeto231224e231223
 
                 Comando = new MySqlCommand("create table if not exists vendaDet" +
                     "(id integer auto_increment primary key," +
-                    "idVendaCab," +
+                    "idVendaCab int," +
                     "idProduto int," +
                     "qtde decimal(10,3)," +
                     "valorUnitario decimal(10,2))", Conexao);

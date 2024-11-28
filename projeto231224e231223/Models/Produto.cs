@@ -38,6 +38,24 @@ namespace projeto231224e231223.Models
                 MessageBox.Show(e.Message, "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
+        public void atualizaEstoque(double qtde)
+        {
+            try
+            {
+                Banco.Conexao.Open();
+                Banco.Comando = new MySqlCommand(
+                    "update produtos set estoque = estoque - @qtde where id = @id", Banco.Conexao
+                );
+                Banco.Comando.Parameters.AddWithValue("@qtde", qtde);
+                Banco.Comando.Parameters.AddWithValue("@id", id);
+                Banco.Comando.ExecuteNonQuery();
+                Banco.Conexao.Close();
+
+            } catch(Exception e)
+            {
+                MessageBox.Show(e.Message, "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
         public void Alterar()
         {
             try
