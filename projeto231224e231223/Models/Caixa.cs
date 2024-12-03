@@ -29,7 +29,7 @@ namespace projeto231224e231223.Models
                 Banco.Conexao.Open();
                 Banco.Comando = new MySqlCommand(
                     "insert into caixa (idVendaCab, dinheiro, pix, cartao, cheque boleto)" +
-                    "value (@idVendaCab, @dinheiro, @pix, @cartao, @cheque, @boleto)", Banco.Conexao
+                    "values (@idVendaCab, @dinheiro, @pix, @cartao, @cheque, @boleto)", Banco.Conexao
                     );
                 Banco.Comando.Parameters.AddWithValue("@idVendaCab", idVendaCab);
                 Banco.Comando.Parameters.AddWithValue("@dinheiro", dinheiro);

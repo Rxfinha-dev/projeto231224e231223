@@ -118,6 +118,7 @@
             this.txtDinheiro.Name = "txtDinheiro";
             this.txtDinheiro.Size = new System.Drawing.Size(436, 47);
             this.txtDinheiro.TabIndex = 7;
+            this.txtDinheiro.TextChanged += new System.EventHandler(this.txtDinheiro_TextChanged);
             // 
             // txtCheque
             // 
@@ -126,6 +127,7 @@
             this.txtCheque.Name = "txtCheque";
             this.txtCheque.Size = new System.Drawing.Size(436, 47);
             this.txtCheque.TabIndex = 8;
+            this.txtCheque.TextChanged += new System.EventHandler(this.txtCheque_TextChanged);
             // 
             // txtBoleto
             // 
@@ -134,6 +136,7 @@
             this.txtBoleto.Name = "txtBoleto";
             this.txtBoleto.Size = new System.Drawing.Size(436, 47);
             this.txtBoleto.TabIndex = 9;
+            this.txtBoleto.TextChanged += new System.EventHandler(this.txtBoleto_TextChanged);
             // 
             // txtPix
             // 
@@ -142,6 +145,7 @@
             this.txtPix.Name = "txtPix";
             this.txtPix.Size = new System.Drawing.Size(436, 47);
             this.txtPix.TabIndex = 10;
+            this.txtPix.TextChanged += new System.EventHandler(this.txtPix_TextChanged);
             // 
             // txtCartao
             // 
@@ -150,6 +154,7 @@
             this.txtCartao.Name = "txtCartao";
             this.txtCartao.Size = new System.Drawing.Size(436, 47);
             this.txtCartao.TabIndex = 11;
+            this.txtCartao.TextChanged += new System.EventHandler(this.txtCartao_TextChanged);
             // 
             // txtTroco
             // 
@@ -227,6 +232,7 @@
             this.btnPagar.TabIndex = 19;
             this.btnPagar.Text = "Realizar o Pagamento";
             this.btnPagar.UseVisualStyleBackColor = true;
+            this.btnPagar.Click += new System.EventHandler(this.btnPagar_Click);
             // 
             // frmCaixa
             // 

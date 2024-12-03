@@ -177,6 +177,12 @@ namespace projeto231224e231223.Views
                 };
                 p.atualizaEstoque(Convert.ToDouble(linha.Cells[2].Value));
             }
+
+            frmCaixa form = 
+                new frmCaixa(idVenda,
+                (int)cboCliente.SelectedValue,
+                total,
+                cboCliente.Text);
             btnCancelar.PerformClick();
         }
 

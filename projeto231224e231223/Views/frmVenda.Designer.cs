@@ -196,6 +196,7 @@
             // mskNascimento
             // 
             this.mskNascimento.Location = new System.Drawing.Point(230, 140);
+            this.mskNascimento.Mask = "99/99/9999";
             this.mskNascimento.Name = "mskNascimento";
             this.mskNascimento.Size = new System.Drawing.Size(202, 20);
             this.mskNascimento.TabIndex = 14;
@@ -203,6 +204,7 @@
             // mskCPF
             // 
             this.mskCPF.Location = new System.Drawing.Point(483, 138);
+            this.mskCPF.Mask = "999.999.999-99";
             this.mskCPF.Name = "mskCPF";
             this.mskCPF.Size = new System.Drawing.Size(213, 20);
             this.mskCPF.TabIndex = 15;
