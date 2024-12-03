@@ -2,10 +2,7 @@
 using System;
 using System.Data;
 using MySql.Data.MySqlClient;
-
-
 using System.Windows.Forms;
-using Google.Protobuf.WellKnownTypes;
 
 namespace projeto231224e231223.Views
 {
@@ -33,8 +30,6 @@ namespace projeto231224e231223.Views
             picProduto.ImageLocation = "";
         }
 
-       
-
         private void btnCancelar_Click(object sender, EventArgs e)
         {
             dgvProdutos.RowCount = 1;
@@ -50,30 +45,38 @@ namespace projeto231224e231223.Views
             lblTotal.Text = total.ToString("C");
             gboClientes.Enabled = true;
             gboProdutos.Enabled = false;
-            LimpaProduto();           
+            LimpaProduto();
         }
 
         private void btnInserir_Click(object sender, EventArgs e)
         {
-            double quantidade = double.Parse(txtQuantidade.Text);
-            double estoque = double.Parse(txtEstoque.Text);
-
-            if(quantidade>estoque)
+            if (cboProdutos.SelectedValue != null &&
+                !string.IsNullOrEmpty(txtQuantidade.Text) &&
+                !string.IsNullOrEmpty(txtPreco.Text))
             {
-                MessageBox.Show("Estoque insuficiente", "Vendas",
-                    MessageBoxButtons.OK, MessageBoxIcon.Information);
-                txtQuantidade.SelectAll();
-                return;
+                double quantidade = double.TryParse(txtQuantidade.Text, out var qtd) ? qtd : 0;
+                double estoque = double.TryParse(txtEstoque.Text, out var est) ? est : 0;
+
+                if (quantidade > estoque)
+                {
+                    MessageBox.Show("Estoque insuficiente", "Vendas",
+                        MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    txtQuantidade.SelectAll();
+                    return;
+                }
+
+                double preco = double.TryParse(txtPreco.Text, out var prc) ? prc : 0;
+
+                dgvProdutos.Rows.Add(cboProdutos.SelectedValue, cboProdutos.Text, quantidade, preco);
+
+                total += quantidade * preco;
+                lblTotal.Text = total.ToString("C");
+                LimpaProduto();
             }
-
-            dgvProdutos.Rows.Add(cboProdutos.SelectedValue, cboProdutos.Text,
-                txtQuantidade.Text, txtPreco.Text);
-
-            double preco = double.Parse(txtPreco.Text);
-
-            total += quantidade * preco;
-            lblTotal.Text = total.ToString("C");
-            LimpaProduto();
+            else
+            {
+                MessageBox.Show("Preencha todos os campos do produto antes de inserir.", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
         }
 
         private void frmVenda_Load(object sender, EventArgs e)
@@ -93,16 +96,16 @@ namespace projeto231224e231223.Views
 
         private void cboCliente_SelectedIndexChanged(object sender, EventArgs e)
         {
-            if(cboCliente.SelectedIndex != -1)
+            if (cboCliente.SelectedItem != null)
             {
                 DataRowView reg = (DataRowView)cboCliente.SelectedItem;
-                txtCidade.Text = reg["cidade"].ToString();
-                txtUf.Text = reg["uf"].ToString();
-                txtRenda.Text = reg["renda"].ToString();
-                mskCPF.Text = reg["cpf"].ToString();
-                mskNascimento.Text = reg["dataNasc"].ToString();
-                picClientes.ImageLocation = reg["foto"].ToString();
-                chkVenda.Checked = (bool)reg["venda"];
+                txtCidade.Text = reg["cidade"]?.ToString();
+                txtUf.Text = reg["uf"]?.ToString();
+                txtRenda.Text = reg["renda"]?.ToString();
+                mskCPF.Text = reg["cpf"]?.ToString();
+                mskNascimento.Text = reg["dataNasc"]?.ToString();
+                picClientes.ImageLocation = reg["foto"]?.ToString();
+                chkVenda.Checked = Convert.ToBoolean(reg["venda"] ?? false);
             }
         }
 
@@ -110,7 +113,7 @@ namespace projeto231224e231223.Views
         {
             if (cboCliente.SelectedIndex != -1)
             {
-                if(chkVenda.Checked)
+                if (chkVenda.Checked)
                 {
                     MessageBox.Show("Cliente bloqueado para venda", "Vendas",
                         MessageBoxButtons.OK, MessageBoxIcon.Warning);
@@ -124,33 +127,46 @@ namespace projeto231224e231223.Views
 
         private void cboProdutos_SelectedIndexChanged(object sender, EventArgs e)
         {
-            if (cboProdutos.SelectedIndex != -1)
+            if (cboProdutos.SelectedItem != null)
             {
                 DataRowView reg = (DataRowView)cboProdutos.SelectedItem;
-                txtEstoque.Text = reg["estoque"].ToString();
-                txtPreco.Text = reg["valorVenda"].ToString();
-                txtMarca.Text = reg["marca"].ToString();
-                txtCategoria.Text = reg["categoria"].ToString();
-                picProduto.ImageLocation = reg["foto"].ToString();
+                txtEstoque.Text = reg["estoque"]?.ToString();
+                txtPreco.Text = reg["valorVenda"]?.ToString();
+                txtMarca.Text = reg["marca"]?.ToString();
+                txtCategoria.Text = reg["categoria"]?.ToString();
+                picProduto.ImageLocation = reg["foto"]?.ToString();
             }
         }
 
         private void btnRemover_Click(object sender, EventArgs e)
         {
-            if(dgvProdutos.RowCount > 0)
+            if (dgvProdutos.CurrentRow != null && dgvProdutos.CurrentRow.Index >= 0)
             {
-                double quantidade = double.Parse(dgvProdutos.CurrentRow.Cells[2].Value.ToString());
-                double preco = double.Parse(dgvProdutos.CurrentRow.Cells[3].Value.ToString());
+                if (dgvProdutos.CurrentRow.Cells.Count > 3)
+                {
+                    double quantidade = double.TryParse(dgvProdutos.CurrentRow.Cells[2].Value?.ToString() ?? "0", out var qtd) ? qtd : 0;
+                    double preco = double.TryParse(dgvProdutos.CurrentRow.Cells[3].Value?.ToString() ?? "0", out var prc) ? prc : 0;
 
-                total -= quantidade * preco;
-                lblTotal.Text = total.ToString();
+                    total -= quantidade * preco;
+                    lblTotal.Text = total.ToString("C");
 
-                dgvProdutos.Rows.RemoveAt(dgvProdutos.CurrentRow.Index);
+                    dgvProdutos.Rows.RemoveAt(dgvProdutos.CurrentRow.Index);
+                }
+            }
+            else
+            {
+                MessageBox.Show("Nenhuma linha selecionada para remoção.", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
         }
 
         private void btnGravar_Click(object sender, EventArgs e)
         {
+            if (cboCliente.SelectedValue == null)
+            {
+                MessageBox.Show("Nenhum cliente selecionado.", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+
             vc = new VendaCab()
             {
                 idCliente = (int)cboCliente.SelectedValue,
@@ -162,27 +178,31 @@ namespace projeto231224e231223.Views
 
             foreach (DataGridViewRow linha in dgvProdutos.Rows)
             {
-                vd = new VendaDet()
+                if (!linha.IsNewRow && linha.Cells.Count > 3)
                 {
-                    idVendaCab = idVenda,
-                    idProduto = Convert.ToInt32(linha.Cells[0].Value),
-                    qtde = Convert.ToDouble(linha.Cells[2].Value),
-                    valorUnitario = Convert.ToDouble(linha.Cells[3].Value)
-                };
-                vd.Incluir();
+                    vd = new VendaDet()
+                    {
+                        idVendaCab = idVenda,
+                        idProduto = Convert.ToInt32(linha.Cells[0].Value ?? 0),
+                        qtde = Convert.ToDouble(linha.Cells[2].Value ?? 0),
+                        valorUnitario = Convert.ToDouble(linha.Cells[3].Value ?? 0)
+                    };
+                    vd.Incluir();
 
-                p = new Produto()
-                {
-                    id = (int)linha.Cells[0].Value
-                };
-                p.atualizaEstoque(Convert.ToDouble(linha.Cells[2].Value));
+                    p = new Produto()
+                    {
+                        id = Convert.ToInt32(linha.Cells[0].Value ?? 0)
+                    };
+                    p.atualizaEstoque(Convert.ToDouble(linha.Cells[2].Value ?? 0));
+                }
             }
 
-            frmCaixa form = 
-                new frmCaixa(idVenda,
-                (int)cboCliente.SelectedValue,
+            frmCaixa form =
+                new frmCaixa(idVenda,               
                 total,
-                cboCliente.Text);
+                cboCliente.Text, 
+                (int)cboCliente.SelectedValue);
+            form.ShowDialog();
             btnCancelar.PerformClick();
         }
 

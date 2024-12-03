@@ -171,7 +171,6 @@
             // 
             // cboCliente
             // 
-            this.cboCliente.Enabled = false;
             this.cboCliente.FormattingEnabled = true;
             this.cboCliente.Location = new System.Drawing.Point(229, 51);
             this.cboCliente.Name = "cboCliente";
@@ -238,7 +237,6 @@
             // 
             // cboProdutos
             // 
-            this.cboProdutos.Enabled = false;
             this.cboProdutos.FormattingEnabled = true;
             this.cboProdutos.Location = new System.Drawing.Point(230, 267);
             this.cboProdutos.Name = "cboProdutos";

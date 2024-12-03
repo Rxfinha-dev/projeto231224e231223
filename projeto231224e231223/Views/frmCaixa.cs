@@ -16,8 +16,7 @@ namespace projeto231224e231223.Views
         double totalVenda, pago, troco, dinheiro, cartao, cheque, pix, boleto;
         private int idVenda;
         private int selectedValue;
-        private string v;
-        private double total;
+     
 
         private void txtPix_TextChanged(object sender, EventArgs e)
         {
@@ -80,21 +79,7 @@ namespace projeto231224e231223.Views
             calcularTroco();
         }
 
-        public frmCaixa(int idVenda, int selectedValue, string v, string text)
-        {
-            this.idVenda = idVenda;
-            this.selectedValue = selectedValue;
-            this.v = v;
-            Text = text;
-        }
-
-        public frmCaixa(int idVenda, int selectedValue, double total, string text)
-        {
-            this.idVenda = idVenda;
-            this.selectedValue = selectedValue;
-            this.total = total;
-            Text = text;
-        }
+     
 
         void calcularTroco()
         {
