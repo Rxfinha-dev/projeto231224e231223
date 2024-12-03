@@ -37,7 +37,7 @@ namespace projeto231224e231223.Views
 
         private void btnCancelar_Click(object sender, EventArgs e)
         {
-            dgvProdutos.RowCount = 0;
+            dgvProdutos.RowCount = 1;
             cboCliente.SelectedIndex = -1;
             txtCidade.Clear();
             txtUf.Clear();
@@ -180,6 +180,9 @@ namespace projeto231224e231223.Views
             btnCancelar.PerformClick();
         }
 
-      
+        private void btnFechar_Click(object sender, EventArgs e)
+        {
+            Close();
+        }
     }
 }

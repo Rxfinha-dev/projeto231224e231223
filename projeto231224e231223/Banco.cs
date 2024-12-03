@@ -103,6 +103,16 @@ namespace projeto231224e231223
                     "valorUnitario decimal(10,2))", Conexao);
                 Comando.ExecuteNonQuery();
 
+                Comando = new MySqlCommand("create table if not exists caixa" +
+                    "(id integer auto_increment," +
+                    "idVendaCab int," +
+                    "dinheiro decimal(10,2)," +
+                    "pix decimal(10,2)," +
+                    "cartao decimal(10,2)," +
+                    "cheque decimal(10,2)," +
+                    "boleto decimal(10,2)", Conexao);
+                Comando.ExecuteNonQuery();
+
 
 
                 FecharConexao();
