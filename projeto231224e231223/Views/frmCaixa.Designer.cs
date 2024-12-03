@@ -255,6 +255,7 @@
             this.Controls.Add(this.txtId);
             this.Name = "frmCaixa";
             this.Text = "frmCaixa";
+            this.Load += new System.EventHandler(this.frmCaixa_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
