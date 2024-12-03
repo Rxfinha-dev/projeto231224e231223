@@ -60,6 +60,38 @@ namespace projeto231224e231223
             form.Show();
         }
 
+        bool sidebarExpand = true;
+        private void sidebarTransition_Tick(object sender, EventArgs e)
+        {
+            if (sidebarExpand)
+            {
+                sidebar.Width -= 10;
+                if (sidebar.Width <= 62) {
+                    sidebarExpand = false;
+                    sidebarTransition.Stop();
+
+     
+                }
+            } else
+            {
+                sidebar.Width += 10;
+                if(sidebar.Width >= 191) 
+                { 
+                    sidebarExpand= true;
+                    sidebarTransition.Stop();
+
+                   
+
+                    
+                }
+            }
+        }
+
+        private void btnMenu_Click(object sender, EventArgs e)
+        {
+            sidebarTransition.Start();
+        }
+
      
     }
 }
