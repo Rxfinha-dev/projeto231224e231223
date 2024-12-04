@@ -1,6 +1,5 @@
 ﻿using System;
 using MySql.Data.MySqlClient;
-using System.Data;
 using System.Windows.Forms;
 
 namespace projeto231224e231223.Models
@@ -19,7 +18,7 @@ namespace projeto231224e231223.Models
             {
                 Banco.Conexao.Open();
                 Banco.Comando = new MySqlCommand(
-                    "insert into vendaDet(idVendaCab, idProduto, qtde, valorUnitario) " +
+                    "insert into vendadet(idVendaCab, idProduto, qtde, valorUnitario) " +
                     "values (@idVendaCab, @idProduto, @qtde, @valorUnitario)",
                     Banco.Conexao
                 );

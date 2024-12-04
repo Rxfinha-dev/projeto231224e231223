@@ -138,5 +138,10 @@ namespace projeto231224e231223.Views
                 txtValor.Text = dgvProdutos.CurrentRow.Cells["valorVenda"].Value.ToString();
             }
         }
+
+        private void btnPesquisar_Click(object sender, EventArgs e)
+        {
+            carregarGrid(txtPesquisar.Text);
+        }
     }
 }
