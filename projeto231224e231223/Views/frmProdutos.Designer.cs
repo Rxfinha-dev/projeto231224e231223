@@ -287,7 +287,7 @@
             this.Controls.Add(this.txtDescricao);
             this.Controls.Add(this.txtId);
             this.Name = "frmProdutos";
-            this.Text = "Cadastro de Produtos";
+            this.Text = "Lista de Vendas";
             this.Load += new System.EventHandler(this.frmProdutos_Load);
             ((System.ComponentModel.ISupportInitialize)(this.picFoto)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvProdutos)).EndInit();

@@ -55,6 +55,10 @@
             this.sidebarTransition = new System.Windows.Forms.Timer(this.components);
             this.mySqlCommand1 = new MySql.Data.MySqlClient.MySqlCommand();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.panel3 = new System.Windows.Forms.Panel();
+            this.button2 = new System.Windows.Forms.Button();
+            this.btnListar = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btnMenu)).BeginInit();
             this.sidebar.SuspendLayout();
@@ -68,6 +72,8 @@
             this.pnFechar.SuspendLayout();
             this.panel10.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            this.panel2.SuspendLayout();
+            this.panel3.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel1
@@ -111,6 +117,7 @@
             this.sidebar.Controls.Add(this.pnCat);
             this.sidebar.Controls.Add(this.pnMarcas);
             this.sidebar.Controls.Add(this.pnCidades);
+            this.sidebar.Controls.Add(this.panel2);
             this.sidebar.Controls.Add(this.pnFechar);
             this.sidebar.Location = new System.Drawing.Point(3, 32);
             this.sidebar.Name = "sidebar";
@@ -292,7 +299,7 @@
             // 
             this.pnFechar.Controls.Add(this.panel10);
             this.pnFechar.Controls.Add(this.btnFechar);
-            this.pnFechar.Location = new System.Drawing.Point(3, 315);
+            this.pnFechar.Location = new System.Drawing.Point(3, 378);
             this.pnFechar.Name = "pnFechar";
             this.pnFechar.Size = new System.Drawing.Size(173, 57);
             this.pnFechar.TabIndex = 11;
@@ -324,7 +331,7 @@
             this.btnFechar.ForeColor = System.Drawing.Color.White;
             this.btnFechar.Image = ((System.Drawing.Image)(resources.GetObject("btnFechar.Image")));
             this.btnFechar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnFechar.Location = new System.Drawing.Point(-30, -12);
+            this.btnFechar.Location = new System.Drawing.Point(-27, -13);
             this.btnFechar.Name = "btnFechar";
             this.btnFechar.Padding = new System.Windows.Forms.Padding(50, 0, 0, 0);
             this.btnFechar.Size = new System.Drawing.Size(244, 84);
@@ -357,6 +364,52 @@
             this.pictureBox1.TabIndex = 4;
             this.pictureBox1.TabStop = false;
             // 
+            // panel2
+            // 
+            this.panel2.Controls.Add(this.panel3);
+            this.panel2.Controls.Add(this.btnListar);
+            this.panel2.Location = new System.Drawing.Point(3, 315);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(173, 57);
+            this.panel2.TabIndex = 12;
+            // 
+            // panel3
+            // 
+            this.panel3.Controls.Add(this.button2);
+            this.panel3.Location = new System.Drawing.Point(3, 315);
+            this.panel3.Name = "panel3";
+            this.panel3.Size = new System.Drawing.Size(173, 46);
+            this.panel3.TabIndex = 10;
+            // 
+            // button2
+            // 
+            this.button2.BackColor = System.Drawing.Color.Black;
+            this.button2.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button2.ForeColor = System.Drawing.Color.White;
+            this.button2.Location = new System.Drawing.Point(-38, -19);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(244, 84);
+            this.button2.TabIndex = 0;
+            this.button2.Text = "Cidades";
+            this.button2.UseVisualStyleBackColor = false;
+            // 
+            // btnListar
+            // 
+            this.btnListar.BackColor = System.Drawing.Color.Black;
+            this.btnListar.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold);
+            this.btnListar.ForeColor = System.Drawing.Color.White;
+            this.btnListar.Image = ((System.Drawing.Image)(resources.GetObject("btnListar.Image")));
+            this.btnListar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnListar.Location = new System.Drawing.Point(-32, -16);
+            this.btnListar.Name = "btnListar";
+            this.btnListar.Padding = new System.Windows.Forms.Padding(50, 0, 0, 0);
+            this.btnListar.Size = new System.Drawing.Size(244, 84);
+            this.btnListar.TabIndex = 0;
+            this.btnListar.Text = "      Lista";
+            this.btnListar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnListar.UseVisualStyleBackColor = false;
+            this.btnListar.Click += new System.EventHandler(this.button3_Click);
+            // 
             // frmMenu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -385,6 +438,8 @@
             this.pnFechar.ResumeLayout(false);
             this.panel10.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            this.panel2.ResumeLayout(false);
+            this.panel3.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -415,6 +470,10 @@
         private System.Windows.Forms.Button btnFechar;
         private MySql.Data.MySqlClient.MySqlCommand mySqlCommand1;
         private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.Panel panel2;
+        private System.Windows.Forms.Panel panel3;
+        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button btnListar;
     }
 }
 
