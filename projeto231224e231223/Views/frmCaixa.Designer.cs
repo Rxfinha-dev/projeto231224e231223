@@ -60,6 +60,7 @@
             // 
             this.txtId.Location = new System.Drawing.Point(93, 42);
             this.txtId.Name = "txtId";
+            this.txtId.ReadOnly = true;
             this.txtId.Size = new System.Drawing.Size(100, 20);
             this.txtId.TabIndex = 0;
             // 
@@ -74,6 +75,7 @@
             // 
             this.txtVenda.Location = new System.Drawing.Point(93, 94);
             this.txtVenda.Name = "txtVenda";
+            this.txtVenda.ReadOnly = true;
             this.txtVenda.Size = new System.Drawing.Size(100, 20);
             this.txtVenda.TabIndex = 2;
             // 

@@ -82,7 +82,7 @@
             this.dgvCategorias.Size = new System.Drawing.Size(762, 225);
             this.dgvCategorias.TabIndex = 54;
             this.dgvCategorias.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvCategorias_CellClick);
-           
+            // 
             // btnPesquisar
             // 
             this.btnPesquisar.Location = new System.Drawing.Point(1219, 408);
@@ -99,7 +99,6 @@
             this.txtPesquisar.Name = "txtPesquisar";
             this.txtPesquisar.Size = new System.Drawing.Size(695, 20);
             this.txtPesquisar.TabIndex = 52;
-    
             // 
             // btnFechar
             // 
@@ -158,16 +157,16 @@
             this.txtNome.Name = "txtNome";
             this.txtNome.Size = new System.Drawing.Size(764, 20);
             this.txtNome.TabIndex = 46;
-       
             // 
             // txtId
             // 
             this.txtId.AccessibleName = "";
             this.txtId.Location = new System.Drawing.Point(518, 147);
             this.txtId.Name = "txtId";
+            this.txtId.ReadOnly = true;
+            this.txtId.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.txtId.Size = new System.Drawing.Size(200, 20);
             this.txtId.TabIndex = 45;
-           
             // 
             // frmCategorias
             // 
