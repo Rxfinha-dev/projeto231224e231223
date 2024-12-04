@@ -65,6 +65,10 @@
             this.lblTotal = new System.Windows.Forms.Label();
             this.gboClientes = new System.Windows.Forms.GroupBox();
             this.gboProdutos = new System.Windows.Forms.GroupBox();
+            this.codigo = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.produto = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.qtde = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.valor = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.picClientes)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picProduto)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvProdutos)).BeginInit();
@@ -320,6 +324,11 @@
             // dgvProdutos
             // 
             this.dgvProdutos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvProdutos.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.codigo,
+            this.produto,
+            this.qtde,
+            this.valor});
             this.dgvProdutos.Location = new System.Drawing.Point(160, 476);
             this.dgvProdutos.Name = "dgvProdutos";
             this.dgvProdutos.Size = new System.Drawing.Size(997, 210);
@@ -391,6 +400,26 @@
             this.gboProdutos.TabIndex = 41;
             this.gboProdutos.TabStop = false;
             this.gboProdutos.Text = "Produtos";
+            // 
+            // codigo
+            // 
+            this.codigo.HeaderText = "Código";
+            this.codigo.Name = "codigo";
+            // 
+            // produto
+            // 
+            this.produto.HeaderText = "Produto";
+            this.produto.Name = "produto";
+            // 
+            // qtde
+            // 
+            this.qtde.HeaderText = "Qtde";
+            this.qtde.Name = "qtde";
+            // 
+            // valor
+            // 
+            this.valor.HeaderText = "Valor";
+            this.valor.Name = "valor";
             // 
             // frmVenda
             // 
@@ -484,5 +513,9 @@
         private System.Windows.Forms.Label lblTotal;
         private System.Windows.Forms.GroupBox gboClientes;
         private System.Windows.Forms.GroupBox gboProdutos;
+        private System.Windows.Forms.DataGridViewTextBoxColumn codigo;
+        private System.Windows.Forms.DataGridViewTextBoxColumn produto;
+        private System.Windows.Forms.DataGridViewTextBoxColumn qtde;
+        private System.Windows.Forms.DataGridViewTextBoxColumn valor;
     }
 }

@@ -21,7 +21,7 @@ namespace projeto231224e231223
         {
             try
             {
-                Conexao = new MySqlConnection("server=localhost;port=3307;uid=root;pwd=etecjau");
+                Conexao = new MySqlConnection("server=localhost;port=3306;uid=root;pwd=etecjau");
 
                 Conexao.Open();
             }
