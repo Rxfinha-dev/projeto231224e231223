@@ -24,41 +24,6 @@ namespace projeto231224e231223
             Banco.CriarBanco();
         }
 
-        private void cidadesToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            frmCidades form = new frmCidades();
-            form.Show();
-        }
-
-        private void marcasToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            frmMarcas form = new frmMarcas();
-            form.Show();
-        }
-
-        private void categoriasToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            frmCategorias form = new frmCategorias();
-            form.Show();
-        }
-
-        private void clientesToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            frmClientes form = new frmClientes();
-            form.Show();
-        }
-
-        private void produtosToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            frmProdutos form = new frmProdutos();
-            form.Show();
-        }
-
-        private void vendaToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            frmVenda form = new frmVenda();
-            form.Show();
-        }
 
         bool sidebarExpand = true;
         private void sidebarTransition_Tick(object sender, EventArgs e)
@@ -92,6 +57,46 @@ namespace projeto231224e231223
             sidebarTransition.Start();
         }
 
-     
+        private void btnFechar_Click(object sender, EventArgs e)
+        {
+            Close();
+        }
+
+        private void btnCidades_Click(object sender, EventArgs e)
+        {
+            frmCidades form = new frmCidades();
+            form.Show();
+        }
+
+        private void btnVendas_Click(object sender, EventArgs e)
+        {
+            frmVenda form = new frmVenda();
+            form.Show();
+        }
+
+        private void btnProdutos_Click(object sender, EventArgs e)
+        {
+            frmProdutos form = new frmProdutos();
+            form.Show();
+        }
+
+        private void btnClientes_Click(object sender, EventArgs e)
+        {
+            frmClientes form = new frmClientes();
+            form.Show();
+        }
+
+        private void btnCategorias_Click(object sender, EventArgs e)
+        {
+            frmCategorias form = new frmCategorias();
+            form.Show();
+        }
+
+        private void btnMarcas_Click(object sender, EventArgs e)
+        {
+            frmMarcas form = new frmMarcas();
+            form.Show();
+
+        }
     }
 }
