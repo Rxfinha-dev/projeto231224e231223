@@ -24,11 +24,11 @@ namespace projeto231224e231223.Models
                 " vd.valorUnitario from vendadet vd inner join" +
                 " vendacab vc on vd.idVendaCab = vc.id " +
                 "inner join clientes c on vc.idCliente = c.id " +
-                "inner join produtos p on vd.idProduto = p.id ",
+                "inner join produtos p on vd.idProduto = p.id where p.descricao like @descricao and vc.data <= @data",
                 Banco.Conexao
                );
-                //Banco.Comando.Parameters.AddWithValue("@descricao", descricao + "%");
-               // Banco.Comando.Parameters.AddWithValue("@data", data);
+                Banco.Comando.Parameters.AddWithValue("@descricao", descricao + "%");
+                Banco.Comando.Parameters.AddWithValue("@data", data);
                 Banco.Adaptador = new MySqlDataAdapter(Banco.Comando);
                 Banco.datTabela = new DataTable();
                 Banco.Adaptador.Fill(Banco.datTabela);

@@ -15,20 +15,26 @@ namespace projeto231224e231223.Views
     {
         ListaDeVendas lv;
 
+        DateTime tomorrowDate = DateTime.Now + new TimeSpan(1, 0, 0, 0);
+
+
+
+
         public  frmConsultaVendas()
         {
             InitializeComponent();
         }
 
-        void carregarGrid(string consulta)
+        void carregarGrid(string consulta, DateTime data)
         {
             lv = new ListaDeVendas()
             {
-                descricao = consulta
-               // data = data
+                descricao = consulta,
+                data = data
             };
             dgvVendas.DataSource = lv.Consultar();
-            
+            lblTotal.Text = (dgvVendas.Rows.Count - 1).ToString();
+
         }
 
         private void btnFechar_Click(object sender, EventArgs e)
@@ -38,12 +44,17 @@ namespace projeto231224e231223.Views
 
         private void btnConsultar_Click(object sender, EventArgs e)
         {
-            carregarGrid(txtPesquisar.Text);
+            carregarGrid(txtPesquisar.Text, dtpVenda.Value);
+            lblTotal.Text = (dgvVendas.Rows.Count - 1).ToString();
         }
 
         private void frmConsultaVendas_Load(object sender, EventArgs e)
         {
-            carregarGrid("");
+            dtpVenda.Value = DateTime.Now;
+            carregarGrid("", DateTime.Now);
+            lblTotal.Text = (dgvVendas.Rows.Count - 1).ToString();
         }
+
+        
     }
 }

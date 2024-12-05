@@ -29,15 +29,15 @@
         private void InitializeComponent()
         {
             this.gboFiltros = new System.Windows.Forms.GroupBox();
-            this.txtPesquisar = new System.Windows.Forms.TextBox();
-            this.dtpVenda = new System.Windows.Forms.DateTimePicker();
-            this.btnConsultar = new System.Windows.Forms.Button();
-            this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
+            this.btnConsultar = new System.Windows.Forms.Button();
+            this.dtpVenda = new System.Windows.Forms.DateTimePicker();
+            this.txtPesquisar = new System.Windows.Forms.TextBox();
             this.dgvVendas = new System.Windows.Forms.DataGridView();
             this.btnFechar = new System.Windows.Forms.Button();
             this.label3 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
+            this.lblTotal = new System.Windows.Forms.Label();
             this.gboFiltros.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvVendas)).BeginInit();
             this.SuspendLayout();
@@ -56,21 +56,23 @@
             this.gboFiltros.TabStop = false;
             this.gboFiltros.Text = "Filtros";
             // 
-            // txtPesquisar
+            // label2
             // 
-            this.txtPesquisar.Location = new System.Drawing.Point(184, 76);
-            this.txtPesquisar.Name = "txtPesquisar";
-            this.txtPesquisar.Size = new System.Drawing.Size(593, 20);
-            this.txtPesquisar.TabIndex = 0;
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(181, 123);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(116, 13);
+            this.label2.TabIndex = 4;
+            this.label2.Text = "Insira a data da venda:";
             // 
-            // dtpVenda
+            // label1
             // 
-            this.dtpVenda.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dtpVenda.Location = new System.Drawing.Point(314, 120);
-            this.dtpVenda.Name = "dtpVenda";
-            this.dtpVenda.Size = new System.Drawing.Size(93, 20);
-            this.dtpVenda.TabIndex = 1;
-            this.dtpVenda.Value = new System.DateTime(2024, 12, 4, 16, 23, 44, 0);
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(48, 79);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(130, 13);
+            this.label1.TabIndex = 3;
+            this.label1.Text = "Insira o Nome do Produto:";
             // 
             // btnConsultar
             // 
@@ -82,23 +84,21 @@
             this.btnConsultar.UseVisualStyleBackColor = true;
             this.btnConsultar.Click += new System.EventHandler(this.btnConsultar_Click);
             // 
-            // label1
+            // dtpVenda
             // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(48, 79);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(130, 13);
-            this.label1.TabIndex = 3;
-            this.label1.Text = "Insira o Nome do Produto:";
+            this.dtpVenda.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dtpVenda.Location = new System.Drawing.Point(314, 120);
+            this.dtpVenda.Name = "dtpVenda";
+            this.dtpVenda.Size = new System.Drawing.Size(93, 20);
+            this.dtpVenda.TabIndex = 1;
+            this.dtpVenda.Value = new System.DateTime(2024, 12, 4, 16, 23, 44, 0);
             // 
-            // label2
+            // txtPesquisar
             // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(181, 123);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(116, 13);
-            this.label2.TabIndex = 4;
-            this.label2.Text = "Insira a data da venda:";
+            this.txtPesquisar.Location = new System.Drawing.Point(184, 76);
+            this.txtPesquisar.Name = "txtPesquisar";
+            this.txtPesquisar.Size = new System.Drawing.Size(593, 20);
+            this.txtPesquisar.TabIndex = 0;
             // 
             // dgvVendas
             // 
@@ -127,22 +127,23 @@
             this.label3.TabIndex = 5;
             this.label3.Text = "Total de Vendas:";
             // 
-            // label4
+            // lblTotal
             // 
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.label4.Location = new System.Drawing.Point(425, 593);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(18, 20);
-            this.label4.TabIndex = 6;
-            this.label4.Text = "0";
+            this.lblTotal.AutoSize = true;
+            this.lblTotal.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.lblTotal.Location = new System.Drawing.Point(425, 593);
+            this.lblTotal.Name = "lblTotal";
+            this.lblTotal.Size = new System.Drawing.Size(18, 20);
+            this.lblTotal.TabIndex = 6;
+            this.lblTotal.Text = "0";
+           
             // 
             // frmConsultaVendas
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1313, 680);
-            this.Controls.Add(this.label4);
+            this.Controls.Add(this.lblTotal);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.btnFechar);
             this.Controls.Add(this.dgvVendas);
@@ -169,6 +170,6 @@
         private System.Windows.Forms.DataGridView dgvVendas;
         private System.Windows.Forms.Button btnFechar;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Label lblTotal;
     }
 }
