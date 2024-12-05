@@ -48,6 +48,10 @@
             this.btnMarcas = new System.Windows.Forms.Button();
             this.pnCidades = new System.Windows.Forms.Panel();
             this.btnCidades = new System.Windows.Forms.Button();
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.panel3 = new System.Windows.Forms.Panel();
+            this.button2 = new System.Windows.Forms.Button();
+            this.btnListar = new System.Windows.Forms.Button();
             this.pnFechar = new System.Windows.Forms.Panel();
             this.panel10 = new System.Windows.Forms.Panel();
             this.button1 = new System.Windows.Forms.Button();
@@ -55,10 +59,10 @@
             this.sidebarTransition = new System.Windows.Forms.Timer(this.components);
             this.mySqlCommand1 = new MySql.Data.MySqlClient.MySqlCommand();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.panel2 = new System.Windows.Forms.Panel();
-            this.panel3 = new System.Windows.Forms.Panel();
-            this.button2 = new System.Windows.Forms.Button();
-            this.btnListar = new System.Windows.Forms.Button();
+            this.panel4 = new System.Windows.Forms.Panel();
+            this.panel5 = new System.Windows.Forms.Panel();
+            this.button3 = new System.Windows.Forms.Button();
+            this.btnRelatorio = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btnMenu)).BeginInit();
             this.sidebar.SuspendLayout();
@@ -69,11 +73,13 @@
             this.pnCat.SuspendLayout();
             this.pnMarcas.SuspendLayout();
             this.pnCidades.SuspendLayout();
+            this.panel2.SuspendLayout();
+            this.panel3.SuspendLayout();
             this.pnFechar.SuspendLayout();
             this.panel10.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
-            this.panel2.SuspendLayout();
-            this.panel3.SuspendLayout();
+            this.panel4.SuspendLayout();
+            this.panel5.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel1
@@ -118,6 +124,7 @@
             this.sidebar.Controls.Add(this.pnMarcas);
             this.sidebar.Controls.Add(this.pnCidades);
             this.sidebar.Controls.Add(this.panel2);
+            this.sidebar.Controls.Add(this.panel4);
             this.sidebar.Controls.Add(this.pnFechar);
             this.sidebar.Location = new System.Drawing.Point(3, 32);
             this.sidebar.Name = "sidebar";
@@ -295,75 +302,6 @@
             this.btnCidades.UseVisualStyleBackColor = false;
             this.btnCidades.Click += new System.EventHandler(this.btnCidades_Click);
             // 
-            // pnFechar
-            // 
-            this.pnFechar.Controls.Add(this.panel10);
-            this.pnFechar.Controls.Add(this.btnFechar);
-            this.pnFechar.Location = new System.Drawing.Point(3, 378);
-            this.pnFechar.Name = "pnFechar";
-            this.pnFechar.Size = new System.Drawing.Size(173, 57);
-            this.pnFechar.TabIndex = 11;
-            // 
-            // panel10
-            // 
-            this.panel10.Controls.Add(this.button1);
-            this.panel10.Location = new System.Drawing.Point(3, 315);
-            this.panel10.Name = "panel10";
-            this.panel10.Size = new System.Drawing.Size(173, 46);
-            this.panel10.TabIndex = 10;
-            // 
-            // button1
-            // 
-            this.button1.BackColor = System.Drawing.Color.Black;
-            this.button1.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.ForeColor = System.Drawing.Color.White;
-            this.button1.Location = new System.Drawing.Point(-38, -19);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(244, 84);
-            this.button1.TabIndex = 0;
-            this.button1.Text = "Cidades";
-            this.button1.UseVisualStyleBackColor = false;
-            // 
-            // btnFechar
-            // 
-            this.btnFechar.BackColor = System.Drawing.Color.Black;
-            this.btnFechar.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold);
-            this.btnFechar.ForeColor = System.Drawing.Color.White;
-            this.btnFechar.Image = ((System.Drawing.Image)(resources.GetObject("btnFechar.Image")));
-            this.btnFechar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnFechar.Location = new System.Drawing.Point(-27, -13);
-            this.btnFechar.Name = "btnFechar";
-            this.btnFechar.Padding = new System.Windows.Forms.Padding(50, 0, 0, 0);
-            this.btnFechar.Size = new System.Drawing.Size(244, 84);
-            this.btnFechar.TabIndex = 0;
-            this.btnFechar.Text = "      Fechar";
-            this.btnFechar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnFechar.UseVisualStyleBackColor = false;
-            this.btnFechar.Click += new System.EventHandler(this.btnFechar_Click);
-            // 
-            // sidebarTransition
-            // 
-            this.sidebarTransition.Interval = 10;
-            this.sidebarTransition.Tick += new System.EventHandler(this.sidebarTransition_Tick);
-            // 
-            // mySqlCommand1
-            // 
-            this.mySqlCommand1.CacheAge = 0;
-            this.mySqlCommand1.Connection = null;
-            this.mySqlCommand1.EnableCaching = false;
-            this.mySqlCommand1.Transaction = null;
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
-            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(590, 87);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(399, 345);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox1.TabIndex = 4;
-            this.pictureBox1.TabStop = false;
-            // 
             // panel2
             // 
             this.panel2.Controls.Add(this.panel3);
@@ -400,7 +338,7 @@
             this.btnListar.ForeColor = System.Drawing.Color.White;
             this.btnListar.Image = ((System.Drawing.Image)(resources.GetObject("btnListar.Image")));
             this.btnListar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnListar.Location = new System.Drawing.Point(-32, -16);
+            this.btnListar.Location = new System.Drawing.Point(-32, -14);
             this.btnListar.Name = "btnListar";
             this.btnListar.Padding = new System.Windows.Forms.Padding(50, 0, 0, 0);
             this.btnListar.Size = new System.Drawing.Size(244, 84);
@@ -409,6 +347,121 @@
             this.btnListar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnListar.UseVisualStyleBackColor = false;
             this.btnListar.Click += new System.EventHandler(this.button3_Click);
+            // 
+            // pnFechar
+            // 
+            this.pnFechar.Controls.Add(this.btnFechar);
+            this.pnFechar.Controls.Add(this.panel10);
+            this.pnFechar.Location = new System.Drawing.Point(3, 441);
+            this.pnFechar.Name = "pnFechar";
+            this.pnFechar.Size = new System.Drawing.Size(173, 57);
+            this.pnFechar.TabIndex = 11;
+            // 
+            // panel10
+            // 
+            this.panel10.Controls.Add(this.button1);
+            this.panel10.Location = new System.Drawing.Point(3, 315);
+            this.panel10.Name = "panel10";
+            this.panel10.Size = new System.Drawing.Size(173, 46);
+            this.panel10.TabIndex = 10;
+            // 
+            // button1
+            // 
+            this.button1.BackColor = System.Drawing.Color.Black;
+            this.button1.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button1.ForeColor = System.Drawing.Color.White;
+            this.button1.Location = new System.Drawing.Point(-38, -19);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(244, 84);
+            this.button1.TabIndex = 0;
+            this.button1.Text = "Cidades";
+            this.button1.UseVisualStyleBackColor = false;
+            // 
+            // btnFechar
+            // 
+            this.btnFechar.BackColor = System.Drawing.Color.Black;
+            this.btnFechar.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold);
+            this.btnFechar.ForeColor = System.Drawing.Color.White;
+            this.btnFechar.Image = ((System.Drawing.Image)(resources.GetObject("btnFechar.Image")));
+            this.btnFechar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnFechar.Location = new System.Drawing.Point(-29, -13);
+            this.btnFechar.Name = "btnFechar";
+            this.btnFechar.Padding = new System.Windows.Forms.Padding(50, 0, 0, 0);
+            this.btnFechar.Size = new System.Drawing.Size(244, 84);
+            this.btnFechar.TabIndex = 0;
+            this.btnFechar.Text = "      Fechar";
+            this.btnFechar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnFechar.UseVisualStyleBackColor = false;
+            this.btnFechar.Click += new System.EventHandler(this.btnFechar_Click);
+            // 
+            // sidebarTransition
+            // 
+            this.sidebarTransition.Interval = 10;
+            this.sidebarTransition.Tick += new System.EventHandler(this.sidebarTransition_Tick);
+            // 
+            // mySqlCommand1
+            // 
+            this.mySqlCommand1.CacheAge = 0;
+            this.mySqlCommand1.Connection = null;
+            this.mySqlCommand1.EnableCaching = false;
+            this.mySqlCommand1.Transaction = null;
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
+            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
+            this.pictureBox1.Location = new System.Drawing.Point(590, 87);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(399, 345);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox1.TabIndex = 4;
+            this.pictureBox1.TabStop = false;
+            // 
+            // panel4
+            // 
+            this.panel4.Controls.Add(this.panel5);
+            this.panel4.Controls.Add(this.btnRelatorio);
+            this.panel4.Location = new System.Drawing.Point(3, 378);
+            this.panel4.Name = "panel4";
+            this.panel4.Size = new System.Drawing.Size(173, 57);
+            this.panel4.TabIndex = 13;
+            // 
+            // panel5
+            // 
+            this.panel5.Controls.Add(this.button3);
+            this.panel5.Location = new System.Drawing.Point(3, 315);
+            this.panel5.Name = "panel5";
+            this.panel5.Size = new System.Drawing.Size(173, 46);
+            this.panel5.TabIndex = 10;
+            // 
+            // button3
+            // 
+            this.button3.BackColor = System.Drawing.Color.Black;
+            this.button3.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button3.ForeColor = System.Drawing.Color.White;
+            this.button3.Location = new System.Drawing.Point(-38, -19);
+            this.button3.Name = "button3";
+            this.button3.Size = new System.Drawing.Size(244, 84);
+            this.button3.TabIndex = 0;
+            this.button3.Text = "Cidades";
+            this.button3.UseVisualStyleBackColor = false;
+            // 
+            // btnRelatorio
+            // 
+            this.btnRelatorio.BackColor = System.Drawing.Color.Black;
+            this.btnRelatorio.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold);
+            this.btnRelatorio.ForeColor = System.Drawing.Color.White;
+            this.btnRelatorio.Image = ((System.Drawing.Image)(resources.GetObject("btnRelatorio.Image")));
+            this.btnRelatorio.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnRelatorio.Location = new System.Drawing.Point(-32, -14);
+            this.btnRelatorio.Name = "btnRelatorio";
+            this.btnRelatorio.Padding = new System.Windows.Forms.Padding(50, 0, 0, 0);
+            this.btnRelatorio.Size = new System.Drawing.Size(244, 84);
+            this.btnRelatorio.TabIndex = 0;
+            this.btnRelatorio.Text = "      Relatório";
+            this.btnRelatorio.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnRelatorio.UseVisualStyleBackColor = false;
+            this.btnRelatorio.Click += new System.EventHandler(this.btnRelatorio_Click);
             // 
             // frmMenu
             // 
@@ -435,11 +488,13 @@
             this.pnCat.ResumeLayout(false);
             this.pnMarcas.ResumeLayout(false);
             this.pnCidades.ResumeLayout(false);
+            this.panel2.ResumeLayout(false);
+            this.panel3.ResumeLayout(false);
             this.pnFechar.ResumeLayout(false);
             this.panel10.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
-            this.panel2.ResumeLayout(false);
-            this.panel3.ResumeLayout(false);
+            this.panel4.ResumeLayout(false);
+            this.panel5.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -474,6 +529,10 @@
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Button btnListar;
+        private System.Windows.Forms.Panel panel4;
+        private System.Windows.Forms.Panel panel5;
+        private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.Button btnRelatorio;
     }
 }
 

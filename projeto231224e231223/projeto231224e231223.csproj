@@ -114,6 +114,7 @@
     <Compile Include="Models\ListaDeVendas.cs" />
     <Compile Include="Models\Marca.cs" />
     <Compile Include="Models\Produto.cs" />
+    <Compile Include="Models\Relatorio.cs" />
     <Compile Include="Models\VendaCab.cs" />
     <Compile Include="Models\VendaDet.cs" />
     <Compile Include="Program.cs" />

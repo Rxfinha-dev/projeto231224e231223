@@ -104,5 +104,11 @@ namespace projeto231224e231223
             frmConsultaVendas form = new frmConsultaVendas();
             form.Show();
         }
+
+        private void btnRelatorio_Click(object sender, EventArgs e)
+        {
+            frmRelatório form = new frmRelatório();
+            form.Show();
+        }
     }
 }
