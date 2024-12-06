@@ -32,13 +32,15 @@
             System.Windows.Forms.DataVisualization.Charting.Legend legend2 = new System.Windows.Forms.DataVisualization.Charting.Legend();
             System.Windows.Forms.DataVisualization.Charting.Series series2 = new System.Windows.Forms.DataVisualization.Charting.Series();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.button3 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
+            this.label1 = new System.Windows.Forms.Label();
+            this.txtPesquisar = new System.Windows.Forms.TextBox();
+            this.btnFechar = new System.Windows.Forms.Button();
+            this.btnImprimir = new System.Windows.Forms.Button();
             this.btnGrafico = new System.Windows.Forms.Button();
             this.dgvLista = new System.Windows.Forms.DataGridView();
             this.btnConsultar = new System.Windows.Forms.Button();
-            this.dtpMaxData = new System.Windows.Forms.DateTimePicker();
             this.chtCategorias = new System.Windows.Forms.DataVisualization.Charting.Chart();
+            this.printDocument1 = new System.Drawing.Printing.PrintDocument();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvLista)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.chtCategorias)).BeginInit();
@@ -46,36 +48,54 @@
             // 
             // groupBox1
             // 
-            this.groupBox1.Controls.Add(this.button3);
-            this.groupBox1.Controls.Add(this.button2);
+            this.groupBox1.Controls.Add(this.label1);
+            this.groupBox1.Controls.Add(this.txtPesquisar);
+            this.groupBox1.Controls.Add(this.btnFechar);
+            this.groupBox1.Controls.Add(this.btnImprimir);
             this.groupBox1.Controls.Add(this.btnGrafico);
             this.groupBox1.Controls.Add(this.dgvLista);
             this.groupBox1.Controls.Add(this.btnConsultar);
-            this.groupBox1.Controls.Add(this.dtpMaxData);
             this.groupBox1.Location = new System.Drawing.Point(61, 34);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(491, 334);
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             // 
-            // button3
+            // label1
             // 
-            this.button3.Location = new System.Drawing.Point(372, 285);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(75, 33);
-            this.button3.TabIndex = 8;
-            this.button3.Text = "Fechar";
-            this.button3.UseVisualStyleBackColor = true;
-            this.button3.Click += new System.EventHandler(this.button3_Click);
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(48, 34);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(92, 13);
+            this.label1.TabIndex = 10;
+            this.label1.Text = "Insira a Categoria:";
             // 
-            // button2
+            // txtPesquisar
             // 
-            this.button2.Location = new System.Drawing.Point(242, 285);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(75, 33);
-            this.button2.TabIndex = 7;
-            this.button2.Text = "Imprimir";
-            this.button2.UseVisualStyleBackColor = true;
+            this.txtPesquisar.Location = new System.Drawing.Point(145, 31);
+            this.txtPesquisar.Name = "txtPesquisar";
+            this.txtPesquisar.Size = new System.Drawing.Size(199, 20);
+            this.txtPesquisar.TabIndex = 9;
+            // 
+            // btnFechar
+            // 
+            this.btnFechar.Location = new System.Drawing.Point(372, 285);
+            this.btnFechar.Name = "btnFechar";
+            this.btnFechar.Size = new System.Drawing.Size(75, 33);
+            this.btnFechar.TabIndex = 8;
+            this.btnFechar.Text = "Fechar";
+            this.btnFechar.UseVisualStyleBackColor = true;
+            this.btnFechar.Click += new System.EventHandler(this.btnFechar_Click);
+            // 
+            // btnImprimir
+            // 
+            this.btnImprimir.Location = new System.Drawing.Point(242, 285);
+            this.btnImprimir.Name = "btnImprimir";
+            this.btnImprimir.Size = new System.Drawing.Size(75, 33);
+            this.btnImprimir.TabIndex = 7;
+            this.btnImprimir.Text = "Imprimir";
+            this.btnImprimir.UseVisualStyleBackColor = true;
+            this.btnImprimir.Click += new System.EventHandler(this.btnImprimir_Click);
             // 
             // btnGrafico
             // 
@@ -105,21 +125,13 @@
             this.btnConsultar.UseVisualStyleBackColor = true;
             this.btnConsultar.Click += new System.EventHandler(this.btnConsultar_Click);
             // 
-            // dtpMaxData
-            // 
-            this.dtpMaxData.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dtpMaxData.Location = new System.Drawing.Point(94, 28);
-            this.dtpMaxData.Name = "dtpMaxData";
-            this.dtpMaxData.Size = new System.Drawing.Size(99, 20);
-            this.dtpMaxData.TabIndex = 1;
-            // 
             // chtCategorias
             // 
             chartArea2.Name = "ChartArea1";
             this.chtCategorias.ChartAreas.Add(chartArea2);
             legend2.Name = "Legend1";
             this.chtCategorias.Legends.Add(legend2);
-            this.chtCategorias.Location = new System.Drawing.Point(659, 34);
+            this.chtCategorias.Location = new System.Drawing.Point(732, 53);
             this.chtCategorias.Name = "chtCategorias";
             this.chtCategorias.Palette = System.Windows.Forms.DataVisualization.Charting.ChartColorPalette.Fire;
             series2.ChartArea = "ChartArea1";
@@ -142,6 +154,7 @@
             this.Text = "frmRelatório";
             this.Load += new System.EventHandler(this.frmRelatório_Load);
             this.groupBox1.ResumeLayout(false);
+            this.groupBox1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvLista)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.chtCategorias)).EndInit();
             this.ResumeLayout(false);
@@ -152,11 +165,13 @@
 
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.Button btnConsultar;
-        private System.Windows.Forms.DateTimePicker dtpMaxData;
         private System.Windows.Forms.DataGridView dgvLista;
         private System.Windows.Forms.DataVisualization.Charting.Chart chtCategorias;
-        private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button btnFechar;
+        private System.Windows.Forms.Button btnImprimir;
         private System.Windows.Forms.Button btnGrafico;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.TextBox txtPesquisar;
+        private System.Drawing.Printing.PrintDocument printDocument1;
     }
 }
